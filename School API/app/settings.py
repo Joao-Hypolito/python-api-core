@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'students',
     'teachers',
     'courses',
+    'statistics_api',
 ]
 
 REST_FRAMEWORK = {
