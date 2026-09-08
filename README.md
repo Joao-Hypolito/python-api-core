@@ -2,6 +2,7 @@
 
 [![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![Django](https://img.shields.io/badge/Django-DRF-092E20?style=for-the-badge&logo=django&logoColor=white)](https://www.djangoproject.com/)
+[![Google Gemini](https://img.shields.io/badge/Google%20Gemini-API-8E75B2?style=for-the-badge&logo=googlegemini&logoColor=white)](https://aistudio.google.com/)
 [![MySQL](https://img.shields.io/badge/MySQL-00758F?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/)
 [![Vue.js](https://img.shields.io/badge/Vue.js-3.x-4FC08D?style=for-the-badge&logo=vuedotjs&logoColor=white)](https://vuejs.org/)
 [![Node.js](https://img.shields.io/badge/Node.js-LTS-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
@@ -17,6 +18,8 @@ Projeto full-stack de **Gestão Escolar** desenvolvido durante a disciplina de *
 | :--- | :--- | :--- |
 | **Backend** | `Python` | Linguagem principal do servidor |
 | **Backend** | `Django REST Framework` | Criação de rotas, serializers, views RESTful e validação de regras de negócio |
+| **Backend** | `google-genai` | SDK Oficial do Google para integração com o modelo de IA **Gemini 2.5 Flash** |
+| **Backend** | `python-dotenv` | Gestão de variáveis de ambiente sigilosas (`.env`) como chaves de API |
 | **Backend** | `django-cors-headers` | Liberação e controle de políticas de CORS |
 | **Backend** | `MySQL` | Banco de dados relacional (produção/desenvolvimento) |
 | **Backend** | `mysqlclient` / `PyMySQL` | Driver de conexão do Python com o MySQL |
@@ -31,6 +34,14 @@ Projeto full-stack de **Gestão Escolar** desenvolvido durante a disciplina de *
 ## 📌 Escopo do que foi Desenvolvido
 
 ### 🛠️ Backend (`school-api`)
+- [x] **Integração com Google Gemini API - Aula 11**:
+  - Criação do módulo desacoplado `gemini_api/client.py` e configuração de autenticação via SDK `google-genai`.
+  - Configuração do modelo `gemini-2.5-flash` para geração automática de resumos e descrições acadêmicas limitadas a 250 caracteres.
+  - Armazenamento seguro da chave de API (`API_KEY`) utilizando arquivo `.env` e a biblioteca `python-dotenv`.
+- [x] **Automação via Django Signals (`pre_save`)**:
+  - Implementação do arquivo `signals.py` no app `courses` escutando o evento `pre_save` do modelo `Course`.
+  - Preenchimento automático do campo `description` via Inteligência Artificial no momento da criação do curso caso o campo seja enviado em branco.
+  - Registro e inicialização do listener de sinal no método `ready()` do `apps.py` (`CoursesConfig`).
 - [x] **Migração de Banco de Dados (MySQL) - Aula 09**:
   - Integração e persistência de dados em um SGBD relacional **MySQL**.
   - Configuração da `School-API` para comunicação remota/local via engine `django.db.backends.mysql`.
@@ -61,18 +72,9 @@ Projeto full-stack de **Gestão Escolar** desenvolvido durante a disciplina de *
 
 ---
 
-## ⚙️ Configuração do Banco de Dados (MySQL)
+## 🔑 Variáveis de Ambiente & Configuração da IA
 
-No arquivo `school-api/app/settings.py`, a conexão com o banco de dados está estruturada da seguinte forma:
+Para habilitar a geração automática de descrições dos cursos com o Google Gemini, crie um arquivo chamado `.env` na raiz do projeto Django (`school-api/`) contendo sua chave da API:
 
-```python
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'school',
-        'USER': 'root',
-        'PASSWORD': '<sua_senha>',
-        'HOST': 'localhost',
-        'PORT': '3306',
-    }
-}
+```env
+API_KEY="SuaChaveDoGoogleAiStudio"
