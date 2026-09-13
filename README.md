@@ -8,26 +8,26 @@
 [![Node.js](https://img.shields.io/badge/Node.js-LTS-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
 [![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)](https://www.postman.com/)
 
-Projeto full-stack de **Gestão Escolar** desenvolvido durante a disciplina de **Programação para Web II** (Prof. Me. Diego H. Negretto). A aplicação é composta por uma **API RESTful** desenvolvida em Django/DRF no backend e uma **Single Page Application (SPA)** desenvolvida em Vue.js 3 no frontend.
+Full-stack **School Management** project developed during the **Web Programming II** course (Prof. M.Sc. Diego H. Negretto). The application consists of a **RESTful API** built with Django/DRF on the backend and a **Single Page Application (SPA)** built with Vue.js 3 on the frontend.
 
 ---
 
-## 💻 Tecnologias & Ferramentas
+## 💻 Technologies & Tools
 
-| Camada | Tecnologia / Lib | Descrição / Uso |
+| Layer | Technology / Lib | Description / Usage |
 | :--- | :--- | :--- |
-| **Backend** | `Python` | Linguagem principal do servidor |
-| **Backend** | `Django REST Framework` | Criação de rotas, serializers, views RESTful e validação de regras de negócio |
-| **Backend** | `google-genai` | SDK Oficial do Google para integração com o modelo de IA **Gemini 2.5 Flash** |
-| **Backend** | `python-dotenv` | Gestão de variáveis de ambiente sigilosas (`.env`) como chaves de API |
-| **Backend** | `django-cors-headers` | Liberação e controle de políticas de CORS |
-| **Backend** | `MySQL` | Banco de dados relacional (produção/desenvolvimento) |
-| **Backend** | `mysqlclient` / `PyMySQL` | Driver de conexão do Python com o MySQL |
-| **Frontend** | `Vue.js 3` | Framework progressivo para construção da interface |
-| **Frontend** | `Vue Router` | Gerenciamento de rotas do lado do cliente (SPA) |
-| **Frontend** | `Axios` | Cliente HTTP para consumo dos endpoints da API |
-| **Ambiente** | `Node.js (LTS)` | Runtime para compilação e gestão de pacotes via npm |
-| **Testes** | `Postman` | Testes de integração, requisições HTTP e validações do payload JSON |
+| **Backend** | `Python` | Main server language |
+| **Backend** | `Django REST Framework` | Route creation, serializers, RESTful views, and business rule validation |
+| **Backend** | `google-genai` | Official Google SDK for integration with the **Gemini 2.5 Flash** AI model |
+| **Backend** | `python-dotenv` | Management of sensitive environment variables (`.env`) such as API keys |
+| **Backend** | `django-cors-headers` | Management and enabling of CORS policies |
+| **Backend** | `MySQL` | Relational database (production/development) |
+| **Backend** | `mysqlclient` / `PyMySQL` | Python driver for MySQL connection |
+| **Frontend** | `Vue.js 3` | Progressive framework for building the user interface |
+| **Frontend** | `Vue Router` | Client-side route management (SPA) |
+| **Frontend** | `Axios` | HTTP client for consuming API endpoints |
+| **Environment** | `Node.js (LTS)` | Runtime for compilation and package management via npm |
+| **Testing** | `Postman` | Integration testing, HTTP requests, and JSON payload validation |
 
 ---
 
