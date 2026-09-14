@@ -31,44 +31,44 @@ Full-stack **School Management** project developed during the **Web Programming 
 
 ---
 
-## 📌 Escopo do que foi Desenvolvido
+## 📌 Scope of What Was Developed
 
 ### 🛠️ Backend (`school-api`)
 
-- [x] **Integração com Google Gemini API - Aula 11**:
-  - Desenvolvimento do módulo independente `gemini_api/client.py` e configuração da autenticação utilizando o SDK `google-genai`.
-  - Definição do modelo `gemini-2.5-flash` para geração automatizada de resumos e descrições acadêmicas com limite de 250 caracteres.
-  - Proteção da chave de API (`API_KEY`) por meio de arquivo `.env` e da biblioteca `python-dotenv`.
+- [x] **Integration with Google Gemini API - Lesson 11**:
+  - Development of the independent module `gemini_api/client.py` and authentication setup using the `google-genai` SDK.
+  - Configuration of the `gemini-2.5-flash` model for automated generation of summaries and academic descriptions, capped at 250 characters.
+  - Protection of the API key (`API_KEY`) via a `.env` file using the `python-dotenv` library.
 
-- [x] **Automação utilizando Django Signals (`pre_save`)**:
-  - Criação do arquivo `signals.py` no app `courses`, responsável por monitorar o evento `pre_save` do modelo `Course`.
-  - Geração automática do campo `description` utilizando Inteligência Artificial durante a criação de um curso quando nenhuma descrição é fornecida.
-  - Registro e ativação do listener de sinais através do método `ready()` em `apps.py` (`CoursesConfig`).
+- [x] **Automation using Django Signals (`pre_save`)**:
+  - Creation of the `signals.py` file within the `courses` app to monitor the `pre_save` event of the `Course` model.
+  - Automatic generation of the `description` field using Artificial Intelligence during course creation whenever no description is provided.
+  - Registration and activation of the signal listener through the `ready()` method in `apps.py` (`CoursesConfig`).
 
-- [x] **Configuração do Banco de Dados MySQL - Aula 09**:
-  - Implementação da persistência de dados utilizando o SGBD relacional **MySQL**.
-  - Configuração da `School-API` para conexão com o banco através da engine `django.db.backends.mysql`.
-  - Aplicação das migrations responsáveis pela criação das tabelas relacionais (`students`, `teachers`, `courses`).
+- [x] **MySQL Database Configuration - Lesson 09**:
+  - Implementation of data persistence using the **MySQL** relational RDBMS.
+  - Configuration of `School-API` to connect to the database via the `django.db.backends.mysql` engine.
+  - Execution of migrations responsible for creating relational tables (`students`, `teachers`, `courses`).
 
-- [x] **Gerenciamento de Alunos (`students`)**:
-  - Implementação do model `Student` com utilização de chave estrangeira (`ForeignKey`) para associação com o curso.
-  - Aplicação da regra de integridade `on_delete=models.RESTRICT`, impedindo a remoção de cursos que possuam alunos associados.
+- [x] **Student Management (`students`)**:
+  - Implementation of the `Student` model using a foreign key (`ForeignKey`) for association with a course.
+  - Enforcement of the integrity rule `on_delete=models.RESTRICT`, preventing the deletion of courses that have linked students.
 
-- [x] **Gerenciamento de Professores (`teachers`)**:
-  - Desenvolvimento do app `teachers` para gerenciamento dos dados dos professores (`name`, `date_of_birth` e `hire_date`).
-  - Implementação de Serializers e views genéricas (`Generics`) para disponibilizar as operações completas de CRUD.
+- [x] **Teacher Management (`teachers`)**:
+  - Development of the `teachers` app to manage instructor data (`name`, `date_of_birth`, and `hire_date`).
+  - Implementation of Serializers and generic views (`Generics`) to expose full CRUD operations.
 
-- [x] **Gerenciamento de Cursos (`courses`)**:
-  - Desenvolvimento do app `courses` contendo o model `Course` (`name`, `description`).
-  - Implementação de relacionamento **Muitos-para-Muitos (NxN)** entre cursos e professores utilizando `ManyToManyField(Teacher, related_name='courses')`.
-  - Utilização do Django ORM para gerenciamento automático da tabela intermediária no banco de dados relacional.
-  - Atualização do model `Student` para estabelecer o relacionamento **Um-para-Muitos (1xN)** com `Course`.
-  - Implementação das views genéricas `CourseCreateListView` e `CourseRetrieveUpdateDestroy`.
+- [x] **Course Management (`courses`)**:
+  - Development of the `courses` app featuring the `Course` model (`name`, `description`).
+  - Implementation of a **Many-to-Many (NxN)** relationship between courses and teachers using `ManyToManyField(Teacher, related_name='courses')`.
+  - Utilization of the Django ORM for automatic management of the join table in the relational database.
+  - Update of the `Student` model to establish a **One-to-Many (1xN)** relationship with `Course`.
+  - Implementation of the generic views `CourseCreateListView` and `CourseRetrieveUpdateDestroy`.
 
-- [x] **Validação e Testes utilizando Postman**:
-  - Configuração e execução de requisições HTTP (`GET`, `POST`, `PUT`, `DELETE`).
-  - Configuração de metadados por meio de `Headers` e envio de dados estruturados no formato JSON através do `Body`.
-  - Realização de testes das operações da API seguindo o padrão REST.
+- [x] **Validation and Testing using Postman**:
+  - Configuration and execution of HTTP requests (`GET`, `POST`, `PUT`, `DELETE`).
+  - Setup of metadata via `Headers` and transmission of structured data in JSON format within the `Body`.
+  - API operation testing following REST architectural standards.
 
 ### 🎨 Frontend (`student-management-vue`)
 - [x] Inicialização do projeto Vue.js 3 utilizando suporte a **Vue Router**.
