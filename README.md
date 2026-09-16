@@ -71,18 +71,19 @@ Full-stack **School Management** project developed during the **Web Programming 
   - API operation testing following REST architectural standards.
 
 ### 🎨 Frontend (`student-management-vue`)
-- [x] Inicialização do projeto Vue.js 3 utilizando suporte a **Vue Router**.
-- [x] Instalação e configuração da biblioteca **Axios**.
-- [x] Criação do serviço centralizador de API (`src/services/api.js`) com métodos de CRUD.
-- [x] Criação da página `HomeView.vue` com tela de recepção do sistema.
-- [x] Criação da página `StudentView.vue` integrando formulários interativos, tratamento de datas e tabela de gerenciamento de alunos.
-- [x] Configuração do middleware `CORS` no Django para permitir requisições da porta local `:5173` do Vite/Vue.
+
+- [x] Initialization of the Vue.js 3 project with **Vue Router** support.
+- [x] Installation and configuration of the **Axios** library.
+- [x] Creation of the centralized API service (`src/services/api.js`) with CRUD methods.
+- [x] Creation of the `HomeView.vue` page with the system's welcome screen.
+- [x] Creation of the `StudentView.vue` page integrating interactive forms, date handling, and a student management table.
+- [x] Configuration of **CORS** middleware in Django to allow requests from the local `:5173` port used by Vite/Vue.
 
 ---
 
-## 🔑 Variáveis de Ambiente & Configuração da IA
+## 🔑 Environment Variables & AI Configuration
 
-Para habilitar a geração automática de descrições dos cursos com o Google Gemini, crie um arquivo chamado `.env` na raiz do projeto Django (`school-api/`) contendo sua chave da API:
+To enable automatic course description generation using Google Gemini, create a `.env` file in the root directory of the Django project (`school-api/`) containing your API key:
 
 ```env
-API_KEY="SuaChaveDoGoogleAiStudio"
+API_KEY="YourGoogleAIStudioKey"
